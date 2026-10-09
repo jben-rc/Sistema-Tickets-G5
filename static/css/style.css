@@ -1,0 +1,36 @@
+.miniatura {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.evidencia {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0 8px 8px 0;
+    cursor: zoom-in;
+}
+
+/* Validación en tiempo real: borde verde si está bien, rojo y mensaje si está mal */
+.form-field small {
+    display: block;
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.form-field.error .form-control,
+.form-field.error .form-select {
+    border-color: #dc3545;
+    border-width: 2px;
+}
+
+.form-field.success .form-control,
+.form-field.success .form-select {
+    border-color: #198754;
+    border-width: 2px;
+}

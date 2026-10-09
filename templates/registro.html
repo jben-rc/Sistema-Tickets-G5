@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block titulo %}Registro - Soporte TI{% endblock %}
+{% block contenido %}
+<div class="card shadow-sm mx-auto" style="max-width: 440px;">
+    <div class="card-body p-4">
+        <h4 class="card-title text-center mb-4">Crear cuenta</h4>
+
+        {% if errores %}
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    {% for error in errores %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if exito %}
+            <div class="alert alert-success">{{ exito }}</div>
+        {% endif %}
+
+        <form id="registroForm" method="POST" action="{{ url_for('registro') }}" novalidate>
+            <div class="mb-3 form-field">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ request.form.get('nombre', '') }}">
+                <small></small>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ request.form.get('email', '') }}">
+                <small></small>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="password" class="form-label">Contraseña (mínimo 8 caracteres)</label>
+                <input type="password" class="form-control" id="password" name="password">
+                <small></small>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="confirmar" class="form-label">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="confirmar" name="confirmar">
+                <small></small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Registrarme</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

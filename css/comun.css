@@ -1,0 +1,52 @@
+/* Estilos compartidos: línea de tiempo (módulo 3) y semáforo SLA (módulo 4) */
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding-left: 18px;
+    border-left: 3px solid #dee2e6;
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 14px;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d6efd;
+    border: 2px solid #fff;
+}
+
+.semaforo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.semaforo-verde { background: #198754; }
+.semaforo-amarillo { background: #ffc107; }
+.semaforo-rojo { background: #dc3545; }
+.semaforo-gris { background: #adb5bd; }
+
+tr.sla-rojo { background: #fdecea; }
+tr.sla-amarillo { background: #fff8e1; }
+
+.notif-no-leida {
+    background: #eef4ff;
+    border-left: 4px solid #0d6efd;
+}
+
+.campo.error .form-control,
+.campo.error .form-select {
+    border-color: #dc3545;
+}

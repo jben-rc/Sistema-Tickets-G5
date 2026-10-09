@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block titulo %}Nuevo ticket - Soporte TI{% endblock %}
+{% block contenido %}
+<div class="card shadow-sm mx-auto" style="max-width: 720px;">
+    <div class="card-body p-4">
+        <h4 class="card-title mb-4">Registrar nuevo ticket</h4>
+
+        <form id="ticketForm" enctype="multipart/form-data" novalidate>
+            <div class="mb-3">
+                <label for="solicitante_id" class="form-label">Solicitante</label>
+                <select class="form-select" id="solicitante_id" name="solicitante_id">
+                    {% for u in usuarios %}
+                        <option value="{{ u.id }}">{{ u.nombre }} ({{ u.rol }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="asunto" class="form-label">Asunto</label>
+                <input type="text" class="form-control" id="asunto" name="asunto" maxlength="150">
+                <small></small>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="descripcion" class="form-label">Descripción del incidente</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="4"></textarea>
+                <small></small>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="categoria" class="form-label">Categoría</label>
+                    <select class="form-select" id="categoria" name="categoria">
+                        {% for c in categorias %}
+                            <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="prioridad" class="form-label">Prioridad</label>
+                    <select class="form-select" id="prioridad" name="prioridad">
+                        {% for p in prioridades %}
+                            <option value="{{ p }}" {% if p == 'Media' %}selected{% endif %}>{{ p }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 form-field">
+                <label for="fotos" class="form-label">Fotos de evidencia (hasta {{ max_fotos }})</label>
+                <input type="file" class="form-control" id="fotos" name="fotos" accept="image/*" multiple>
+                <small></small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Registrar ticket</button>
+            <div id="mensajeTicket" class="mt-3"></div>
+        </form>
+    </div>
+</div>
+{% endblock %}

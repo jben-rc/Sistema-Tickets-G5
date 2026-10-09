@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block titulo %}Tickets - Soporte TI{% endblock %}
+{% block contenido %}
+<h4 class="mb-3">Tickets registrados</h4>
+<table class="table table-hover align-middle bg-white">
+    <thead class="table-light">
+        <tr><th>Foto</th><th>#</th><th>Asunto</th><th>Prioridad</th><th>Estado</th><th>Solicitante</th><th>Fecha</th></tr>
+    </thead>
+    <tbody>
+        {% for t in tickets %}
+        <tr>
+            <td>
+                {% if t.miniatura %}
+                    <img class="miniatura" src="{{ url_for('uploads', nombre=t.miniatura) }}" alt="Evidencia">
+                {% else %}
+                    <span class="text-muted small">Sin foto</span>
+                {% endif %}
+            </td>
+            <td>{{ t.id }}</td>
+            <td><a href="{{ url_for('ticket_detalle', p_id=t.id) }}">{{ t.asunto }}</a></td>
+            <td>{{ t.prioridad }}</td>
+            <td>{{ t.estado }}</td>
+            <td>{{ t.solicitante }}</td>
+            <td>{{ t.created_at.strftime('%d/%m/%Y %H:%M') }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7" class="text-center text-muted">Aún no hay tickets registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

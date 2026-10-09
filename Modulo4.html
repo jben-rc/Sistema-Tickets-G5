@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo 4 - SLA y semáforo visual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/comun.css">
+</head>
+<body class="bg-light">
+    <div id="menu"></div>
+
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="card-title">SLA de tickets</h5>
+                <p class="text-muted small">
+                    Tiempo máximo de resolución: Alta 4 h · Media 24 h · Baja 72 h.
+                    <span class="semaforo semaforo-verde ms-2"></span>menos del 50 %
+                    <span class="semaforo semaforo-amarillo ms-2"></span>entre 50 % y 100 %
+                    <span class="semaforo semaforo-rojo ms-2"></span>vencido
+                </p>
+
+                <div id="alertaSla" class="alert alert-danger" style="display:none;" role="alert"></div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Semáforo</th><th>#</th><th>Asunto</th><th>Prioridad</th>
+                                <th>Estado</th><th>Transcurrido</th><th>Límite</th><th>SLA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaSla"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/modulo4.js"></script>
+</body>
+</html>

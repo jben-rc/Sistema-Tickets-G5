@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block titulo %}Catálogo{% endblock %}
+{% block contenido %}
+<h4 class="mb-3">Catálogo de películas</h4>
+<table class="table table-striped bg-white">
+    <thead>
+        <tr><th>Título</th><th>Género</th><th>Año</th><th>Precio</th></tr>
+    </thead>
+    <tbody>
+        {% for p in peliculas %}
+        <tr>
+            <td>{{ p.titulo }}</td>
+            <td>{{ p.genero }}</td>
+            <td>{{ p.anio }}</td>
+            <td>S/ {{ p.precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

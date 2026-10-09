@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block titulo %}Inicio - Soporte TI{% endblock %}
+{% block contenido %}
+<div class="p-5 bg-white rounded shadow-sm text-center">
+    <h1>Sistema de Gestión de Tickets de Soporte TI</h1>
+    <p class="lead">Registra tus incidentes con fotos de evidencia y haz seguimiento hasta su solución.</p>
+    <a href="{{ url_for('crear_ticket') }}" class="btn btn-primary">Crear ticket</a>
+    <a href="{{ url_for('tickets') }}" class="btn btn-outline-secondary">Ver tickets</a>
+</div>
+{% endblock %}

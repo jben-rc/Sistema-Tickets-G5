@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block titulo %}Ticket #{{ ticket.id }} - Soporte TI{% endblock %}
+{% block contenido %}
+<div class="card shadow-sm mb-4">
+    <div class="card-body p-4">
+        <h4>#{{ ticket.id }} · {{ ticket.asunto }}</h4>
+        <p class="text-muted small">
+            {{ ticket.categoria }} · Prioridad {{ ticket.prioridad }} · Estado {{ ticket.estado }} ·
+            {{ ticket.solicitante }} · {{ ticket.created_at.strftime('%d/%m/%Y %H:%M') }}
+        </p>
+        <p style="white-space: pre-wrap;">{{ ticket.descripcion }}</p>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h5 class="mb-3">Evidencias fotográficas</h5>
+        {% for e in evidencias %}
+            <a href="{{ url_for('uploads', nombre=e.ruta_archivo) }}" target="_blank">
+                <img class="evidencia" src="{{ url_for('uploads', nombre=e.ruta_archivo) }}" alt="Evidencia">
+            </a>
+        {% else %}
+            <p class="text-muted mb-0">Este ticket no tiene fotos de evidencia.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+Subject: [sakai] svn commit: r39772 - content/branches/
+From louis@media.berkeley.edu Fri Jan  4 18:10:48 2008
+Subject: [sakai] svn commit: r39771 - in bspace/site-manage
+From zqian@umich.edu Fri Jan  4 16:10:39 2008
+Subject: [sakai] svn commit: r39770 - in bspace/site-manage
+From stephen.marquard@uct.ac.za Fri Jan  4 15:46:24 2008
+Subject: [sakai] svn commit: r39769 - content/branches/
+From louis@media.berkeley.edu Fri Jan  4 15:03:18 2008
+Subject: [sakai] svn commit: r39766 - bspace/site-manage
+From stephen.marquard@uct.ac.za Fri Jan  4 14:50:18 2008
+Subject: [sakai] svn commit: r39765 - content/branches/
